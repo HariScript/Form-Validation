@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="processor.html" method="get" id="frmStudentRegistration" name="frmStudentRegistration" onsubmit="return validate()" onreset="resetForm()"></form>
+        <label for="txtStudentName">Student Name: </label><br/>
+        <input type="text" value="" placeholder="Enter your name" id="txtStudentName" name="txtStudentName"/>
+        <span id="spanIsStudentNameValid"></span><br><br/>
+
+        <input type="submit" value="SUBMIT"/>
+        <input type="reset" value="RESET"/>
+</form>
+<script type="text/javascript">
+    function validate()
+    {
+        var spanIsStudentNameValid = true
+
+        if(document.getElementById("txtStudentName").value == ""){
+            isStudentNameValid=false;
+            document.getElementById('spnIsStudentNameValid').innerHTML="&#x2716; Please Enter your name.";
+            document.getElementById('spnIsStudentNameValid').style.color="red";
+        }
+        else{
+            isStudentNameValid=false;
+            document.getElementById('spnIsStudentNameValid').innerHTML="&#x2714; Valid";
+            document.getElementById('spnIsStudentNameValid').style.color="green";
+        }
+        
+        if(isStudentNameValid==false){
+            return false;
+        }
+        else{
+            return true
+        }
+
+    function resetForm(){
+        document.getElementById('spnIsStudentNameValid').innerHTML="";
+    }
+    }
+</script>
+</body>
+</html>
